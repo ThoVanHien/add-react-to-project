@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add react to project</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- <h1 title="Hello" class="heading">Add React to website</h1>
+    <ul>
+      <li>JavaScript</li>
+      <li>ReactJs</li>
+    </ul>
+    <div class="post-item">
+      <h2 title="Học JS Tại F8">Học ReactJS</h2>
+      <p>Học Js cơ bản đến nâng cao</p>
+    </div> -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+      //Khi trang web tải xong tìm trong  DOM script nào có text/babel => get text content trong này.
+      // DOM
+      const h1 = document.createElement("h1");
+      h1.className = "heading";
+      h1.title = "Hello";
+      h1.innerText = "Add React to website";
+      document.body.appendChild(h1);
+
+      // React
+      // React.createElement(type,props{},children,n) children nằm trong props
+      const h1React = React.createElement(
+        "h1",
+        {
+          title: "hello",
+          className: "heading",
+        },
+        "Hello Guys"
+      );
+      ReactDOM.render(h1React, document.querySelector("#root"));
+
+      //Babel
+      const h1Babel = (
+        <ul>
+          <li>JavaScript</li>
+          <li>ReactJs</li>
+        </ul>
+      );
+
+
+
+      
+      console.dir(h1); // DOM Object
+      console.log(h1Babel); // Obj
+      //   ReactDOM.render(h1Babel, document.querySelector("#root"));
+      //ReactDOM.render(element, container) hoặc ReactDOM.version
+
+      //=>Vấn đề nếu dùng createElement => Babel ra đời chuyển đổi JSX thành React.createElement
+    </script>
+  </body>
+</html>
